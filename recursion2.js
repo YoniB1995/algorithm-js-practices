@@ -55,3 +55,6 @@ const fib = (n) => {
 
 console.log(fib(8))
 console.log(fib(5))
+
+// Time : O(2^n)
+// Space : O(n)
