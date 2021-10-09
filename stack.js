@@ -27,7 +27,7 @@ class Stack {
             this.top = new StackNode(val);
         } else {
             const pushedNode = new StackNode(val);
-            pushedNode.next = this.top;
+            pushedNode.next = this.top; // '(4,5)'
             this.top = pushedNode;
         }
         this.size++;
@@ -38,7 +38,7 @@ class Stack {
         const poppedNode = this.top;
         this.top = this.top.next;
         this.size--;
-        return poppedNode.val
+        return poppedNode.val;
     }
 
     getTop(){
@@ -50,4 +50,8 @@ class Stack {
 const myStack = new Stack();
 myStack.push('a');
 myStack.push('b');
-myStack.push('c');
+// myStack.push('c');
+
+console.log(myStack.top)
+
+console.log(myStack.pop())
