@@ -150,3 +150,65 @@
 // }
 
 //**************************************************************************/
+// Define a function that takes one integer argument and returns logical value true or false depending on if the integer is a prime.
+
+// Per Wikipedia, a prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+
+//Wrong Solution - Time Complexity
+// function isPrime(num) { 
+// if (num < 2) return false;  
+// for (var i=2; i<num; i++) {  
+// if (num % i == 0) {  
+// return false;}}  
+// return true;  
+//   }
+
+//Best Solution :
+// function isPrime(num) {
+//   if (num < 2) {
+//      return false;
+//   }
+// if (num === 2) {
+//      return true;
+//   }
+  
+//   const maximumDividor = Math.sqrt(num) + 1;
+// for (let i = 2; i < maximumDividor; i++) {
+//      if (num % i === 0) {
+//        return false;
+//      }
+//   }
+// return true;
+// }
+
+//**************************************************************************/
+
+//My Solution: 
+function validParentheses(parens){
+  var stack = [],
+    i;
+  
+  for (i = 0; i < parens.length; i++) {
+    if (parens[i] === '(') {
+      stack.push(parens[i]);
+    }
+    else if('(' !== stack.pop()) {
+      return false;
+    }
+  }
+  
+  return stack.length === 0;
+}
+
+
+//Best Solution :
+// function validParentheses(parens){
+//   var n = 0;
+//   for (var i = 0; i < parens.length; i++) {
+//     if (parens[i] == '(') n++;
+//     if (parens[i] == ')') n--;
+//     if (n < 0) return false;
+//   }
+  
+//   return n == 0;
+// }
