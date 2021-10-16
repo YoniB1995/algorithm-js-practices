@@ -4,28 +4,27 @@
 // ["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
 // ["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
 
+// const peoplesLike = (people) => {
+//     people = people || [];
+
+    
+//     switch(people.length){
+//         case 0 :
+//             return 'no one likes this'
+//         case 1:
+//             return `${people[0]} likes this`
+//         case 2:
+//             return `${people[0]} and ${people[1]} like this`
+//         case 3:
+//             return `${people[0]}, ${people[1]} and ${people[2]} like this`
+//         default:
+//             return `${people[0]} and ${people.length-1} others like this`
+
+//     }
+// }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// console.log(peoplesLike(['Yoni','Dani','Shmuel','Yosi','Shmuel']))
 
 
 
@@ -38,13 +37,52 @@
 // Note: If the number is a multiple of both 3 and 5, only count it once.
 
 
+// const returnSum = (num) => {
+//     let sumNum = 0;
+//     if (num < 0) {
+//         return 'negative'
+//     }
+//     for(let i = 0 ; i < num; i++) {
+// if ( i % 3 === 0 || i % 5 === 0){
+//     sumNum += i;
+//     }
+//     }
+//     return sumNum;
+// }
+
+// console.log(returnSum(20))
 
 
+//=============================================================================//
+// Implement a function that adds two numbers together and returns their sum in binary. The conversion can be done before, or after the addition.
+
+// The binary number returned should be a string.
+
+// 1, 1 --> "10" (1 + 1 = 2 in decimal or 10 in binary)
+// 5, 9 --> "1110" (5 + 9 = 14 in decimal or 1110 in binary)
+
+function addBinary( a, b ){
+  var sum = a + b,
+  		binary = '';
+
+  while ( sum > 0 ) {
+    binary = ( sum % 2 ) + binary;
+    console.log(binary)
+    sum = Math.floor( sum / 2 );
+  }
+
+  return binary;
+}
+
+console.log(addBinary(10,11))
+
+const addNewBinary = (a,b) => { return (a+b).toString(2) } 
+console.log(addNewBinary(10,11))
 
 
+//=============================================================================//
 
-
-
+//You live in the city of Cartesia where all roads are laid out in a perfect grid. You arrived ten minutes too early to an appointment, so you decided to take the opportunity to go for a short walk. The city provides its citizens with a Walk Generating App on their phones -- everytime you press the button it sends you an array of one-letter strings representing directions to walk (eg. ['n', 's', 'w', 'e']). You always walk only a single block for each letter (direction) and you know it takes you one minute to traverse one city block, so create a function that will return true if the walk the app gives you will take you exactly ten minutes (you don't want to be early or late!) and will, of course, return you to your starting point. Return false otherwise.
 
 
 
@@ -61,8 +99,27 @@
 // moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]
 
 
+// function moveZeros(arr){
+
+//     let zeros = [];
+//     let all = [];
+
+//     for(let i=0;i<arr.length;i++){
+//         if (arr[i]===0 ){
+//             zeros.push(arr[i])
+//         } else {
+//             all.push(arr[i])
+//         }
+//     }
+
+//     const result = all.concat(zeros);
+//     return result;
+
+// }
 
 
+
+// console.log(moveZeros([false,0,0,0,0,2,3,5,0,1,2,0,1,3,"a"]))
 
 
 
