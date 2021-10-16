@@ -212,3 +212,126 @@ function validParentheses(parens){
   
 //   return n == 0;
 // }
+
+
+
+//**************************************************************************/
+
+// A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
+
+// Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
+
+
+function isPangram(string){
+  string = string.toLowerCase();
+  return "abcdefghijklmnopqrstuvwxyz"
+    .split("").every((x)=> {
+      return string.indexOf(x) !== -1;
+  });
+}
+
+
+//**************************************************************************/
+
+// In this kata you have to create all permutations of an input string and remove duplicates, if present. This means, you have to shuffle all letters from the input in all possible orders.
+
+//permutations('a'); // ['a']
+// permutations('ab'); // ['ab', 'ba']
+// permutations('aabb'); // ['aabb', 'abab', 'abba', 'baab', 'baba', 'bbaa']
+
+
+
+function permutations(string) {
+  if (!!string.length && string.length < 2 ){
+      return [string]
+   }
+   const arr = [];
+   for (let i = 0; i < string.length; i++){
+      let char = string[i]
+      if (string.indexOf(char) != i)
+         continue
+         let remainder = string.slice(0, i) + string.slice(i + 1, string.length)
+         for (let permutation of permutations(remainder)){
+            arr.push(char + permutation)
+         }
+   }
+   return arr
+}
+
+//**************************************************************************/
+
+//Simpe Pig Latin
+//Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+
+// pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
+// pigIt('Hello world !');     // elloHay orldway !
+
+// function pigIt(str){
+//   str = str.trim().split(/\s{1,}/);
+//     return str.map(val => {
+//         if (/^[A-Za-z]+$/.test(val)) {
+//             return `${val.slice(1)}${val.slice(0, 1)}ay`;
+//         }
+//         return val;
+//     }).join(' ');
+// }
+
+//Best solution 
+// function pigIt(str) {
+//   return str.replace(/\w+/g, (w) => {
+//     return w.slice(1) + w[0] + 'ay';
+//   });
+// }
+
+// //Best Solution #2
+// function pigIt(str){
+//   return str.replace(/(\w)(\w*)(\s|$)/g, "\$2\$1ay\$3")
+// }
+
+
+//**************************************************************************/
+//Alright, detective, one of our colleagues successfully observed our target person, Robby the robber. We followed him to a secret warehouse, where we assume to find all the stolen stuff. The door to this warehouse is secured by an electronic combination lock. Unfortunately our spy isn't sure about the PIN he saw, when Robby entered it.
+// ┌───┬───┬───┐
+// │ 1 │ 2 │ 3 │
+// ├───┼───┼───┤
+// │ 4 │ 5 │ 6 │
+// ├───┼───┼───┤
+// │ 7 │ 8 │ 9 │
+// └───┼───┼───┘
+//     │ 0 │
+//     └───┘
+
+function getPINs(observed) {
+  let combos = [];
+	let neighbors = {
+		"0": ["8"],
+		"1": ["2", "4"],
+		"2": ["1", "3", "5"],
+		"3": ["2", "6"],
+		"4": ["1", "5", "7"],
+		"5": ["2", "4", "6", "8"],
+		"6": ["3", "5", "9"],
+		"7": ["4", "8"],
+		"8": ["5", "7", "9", "0"],
+		"9": ["6", "8"]
+	};
+	let strDigits = observed.toString().split("");
+  
+	getCombos(strDigits, 0, "");
+	return combos;
+
+
+	function getCombos(digits, idx, curCombo) {
+
+		let curDigit = digits[idx];
+		let candidates = new Set(neighbors[curDigit]);
+		candidates.add(curDigit);
+
+		candidates.forEach(idx == digits.length - 1 ? reachedEnd : goDeeper);
+
+		function reachedEnd(candidate) { combos.push(curCombo + candidate); }
+		function goDeeper(candidate) {
+			getCombos(digits, idx + 1, curCombo + candidate)
+		}
+	}
+}
