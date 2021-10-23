@@ -26,8 +26,25 @@ class Graph {
     addToGraph(node){
         this.nodes.push(node)
     }
-    breadthFirstTraversal(){
-
+    breadthFirstTraversal(start,end){
+        const queue = [start];
+        const visitedNodes = new Set();
+        visitedNodes.add(start);
+        while(queue.length > 0){
+            // pull node queue (to visit)
+            //add its close nodes to the queues
+            const node = queue.shift();
+            if(node.value === end.value) {
+                console.log('Found it!');
+                return;
+            }
+            for (const adjacency of node.edgesList){
+                if(!visitedNodes.has(adjacency)){
+                    queue.push(adjacency);
+                    visitedNodes.add(adjacency);
+                }
+            }
+        }
     }
 }
 
