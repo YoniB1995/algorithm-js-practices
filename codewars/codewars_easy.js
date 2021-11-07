@@ -5,16 +5,19 @@
 
 
 const reversedWord = (word) => {
+  let arr = word.split('');
+  let wordString = ''
+  for(let i = arr.length-1;i>=0;i--){
+    wordString+=arr[i]
+  }
 
+  return wordString
 
-
-
-
-    
-    
-    return word.split('').reverse().join('');
 }
 
+
+
+// console.log(reversedWord("yonibitew"))
 
 
 
@@ -27,7 +30,7 @@ function solution(str) {
   }
   return reversedStr;
 }
-console.log(solution("yonibitew"))
+// console.log(solution("yonibitew"))
 
 //best Practice
 function reverseString(str) {
@@ -78,7 +81,7 @@ const fibonacci = (n) => {
   }
   
   return fibonacci(n - 1) + fibonacci(n - 2);
-};
+};                   
 // console.log(fibonacci(5))
 
 
@@ -115,8 +118,11 @@ const factorial = (n) => {
  * for example - sum(4) = 4 + 3 + 2 + 1
  */
 const sum = (n) => {
-    if(n===0) return 0;
-    return n+sum(n-1);
-};
+      console.log(n);
 
-// console.log(sum(4))
+    if(n === 1) return 1;
+    return n+sum(n-1);
+}
+
+console.log(sum(4))
+
