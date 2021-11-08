@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 /**
  * Given a word determine if it is a palindrome - https://en.wikipedia.org/wiki/Palindrome
  */
@@ -85,3 +86,68 @@ const sanitaizeArr = (arr) => {
 
 
 console.log(sanitaizeArr(arr))
+
+
+
+const arrayDiff = (a, b) => {
+   
+   for (let i = 0; i < a.length; i++) {
+    if(b.indexOf(a[i]) !== -1) {
+       a.splice(i, 1);
+       i--
+    
+     }
+ }
+   return a
+  
+}
+
+console.log(arrayDiff([1,2,2,2,3],[2]));
+
+
+
+const isValidWalk = (walk) => {
+    let dx = 0;
+    let dy = 0;
+    let time = walk.length;
+
+    for(let i=0;i<walk.length;i++){
+      switch(walk[i]){
+          case "n" : dy++; break;
+          case "s" : dy--; break;
+          case "w" : dx++; break;
+          case "e" : dx--; break;
+      }
+      }
+    return time === 10 && dx === 0 && dy === 0
+}
+
+console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']))
+
+// =================================================================/
+// [2, 4, 0, 100, 4, 11, 2602, 36]
+// Should return: 11 (the only odd number)
+
+// [160, 3, 1719, 19, 11, 13, -21]
+// Should return: 160 (the only even number)
+
+const findOutlier = (integers) => {
+  let odd =[];
+  let even = [];
+  for(let i =0;i<integers.length;i++){
+    if(integers[i] % 2 === 0){
+      even.push(integers[i])
+    } else {
+      odd.push(integers[i])
+    }
+  }
+  if(odd.length === 1 ){
+    return odd[0]
+  }
+  else {
+    return even[0]
+  }
+}
+
+
+console.log(findOutlier([2, 4, 0, 100, 4, 11, 2602, 36]));
