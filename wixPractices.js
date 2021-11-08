@@ -67,7 +67,7 @@ function checkParanthesis(str) {
     return brackets;
 }
 
-console.log(checkParanthesis('(((()))'));
+// console.log(checkParanthesis('(((()))'));
 
 // 
 const isBalancedParenthesis = (expression) => {
@@ -91,11 +91,11 @@ const isBalancedParenthesis = (expression) => {
 
   return stack.length === 0;
 };
-
+console.log(isBalancedParenthesis('[[][]]{}{{}}[]'))
 /**
  * Given a word determine if it is a palindrome - https://en.wikipedia.org/wiki/Palindrome
  */
-export const isPalindrome = (word) => {
+const isPalindrome = (word) => {
   for (let i = 0; i < Math.floor(word.length / 2); i++) {
     if (word[i] !== word[word.length - 1 - i]) {
       return false;
