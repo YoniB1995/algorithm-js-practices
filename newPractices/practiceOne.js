@@ -151,3 +151,42 @@ const findOutlier = (integers) => {
 
 
 console.log(findOutlier([2, 4, 0, 100, 4, 11, 2602, 36]));
+
+
+
+//If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+// Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in. Additionally, if the number is negative, return 0 (for languages that do have them).
+
+const solution = (number) => {
+  let res = 0;
+  for(let i=0;i<number;i++){
+    if(i % 3 === 0|| i % 5 === 0) {
+      res += i;
+    }
+  }
+  
+  return res
+}
+
+
+// permutations('a'); // ['a']
+// permutations('ab'); // ['ab', 'ba']
+// permutations('aabb'); // ['aabb', 'abab', 'abba', 'baab', 'baba', 'bbaa']
+
+const permutations = (string) => {
+  if (!!string.length && string.length < 2 ){
+      return [string]
+   }
+   const arr = [];
+   for (let i = 0; i < string.length; i++){
+      let char = string[i]
+      if (string.indexOf(char) != i)
+         continue
+         let remainder = string.slice(0, i) + string.slice(i + 1, string.length)
+         for (let permutation of permutations(remainder)){
+            arr.push(char + permutation)
+         }
+   }
+   return arr
+}
