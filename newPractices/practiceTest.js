@@ -2,12 +2,7 @@
  * Given a word determine if it is a palindrome - https://en.wikipedia.org/wiki/Palindrome
  */
 const isPalindrome = (word) => {
-    for(let i=0;i<word.length;i++){
-        if(word[i] !== word[word.length-1-i]){
-            return false;
-        }
-    }
-    return true
+    
 };
 
 // console.log(isPalindrome("yonaaoonoy"));
@@ -17,10 +12,10 @@ const isPalindrome = (word) => {
 
 
 const isBalancedParenthesis = (word) => {
-
+    
 };
 
-// console.log(isBalancedParenthesis("[[]]{}[{{}}"));
+// console.log(isBalancedParenthesis("[[{}]]{{}}[{{}}]"));
 
 
 
@@ -53,7 +48,7 @@ const sanitaizeArr = (arr) => {
 //arrayDiff([1,2,2,2,3],[2]) == [1,3]
 
 const arrayDiff = (a, b) => {
-   
+ 
 }
 
 // console.log(arrayDiff([1,2,2,2,3],[2]));
@@ -71,8 +66,8 @@ const isValidWalk = (walk) => {
 
 //returns odd / even number
 const findOutlier = (integers) => {
- 
+
 }
 
 
-// console.log(findOutlier([2, 4, 0, 100, 4, 11, 2602, 36]));
+// console.log(findOutlier([5,7,9,13,20,21,23,25]));
