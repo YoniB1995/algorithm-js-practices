@@ -137,4 +137,4 @@ const matrixTest = [[1,2,7],[3,6,12],[2,4,10]]
 
 };
 
-console.log(max(matrixTest));
+// console.log(max(matrixTest));
