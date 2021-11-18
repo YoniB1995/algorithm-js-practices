@@ -55,16 +55,16 @@ const solveWithSorting = (a, b) => {
 //  ([{}]() not balanced (missing a closing "(" for the first paren)
 
 function checkParanthesis(str) {
-    let brackets = [];
-    for (let i = 0; i < str.length; i++) {     
-        if (str[i] === "(") {
-            brackets.push(str[i]);
-        } else if (str[i] === ")") {
-            if (brackets[brackets.length - 1] === "(") brackets.pop();
-            else brackets.push("#");
-        }
+  let brackets = [];
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === "(") {
+      brackets.push(str[i]);
+    } else if (str[i] === ")") {
+      if (brackets[brackets.length - 1] === "(") brackets.pop();
+      else brackets.push("#");
     }
-    return brackets;
+  }
+  return brackets;
 }
 
 // console.log(checkParanthesis('(((()))'));
@@ -91,7 +91,7 @@ const isBalancedParenthesis = (expression) => {
 
   return stack.length === 0;
 };
-console.log(isBalancedParenthesis('[[][]]{}{{}}[]'))
+// console.log(isBalancedParenthesis('[[][]]{}{{}}[]'))
 /**
  * Given a word determine if it is a palindrome - https://en.wikipedia.org/wiki/Palindrome
  */
