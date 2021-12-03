@@ -90,16 +90,7 @@ const permutations = (string) => {
 
 const matrixSum = [[1,2,3],[1,2,3],[1,2,3]]
 
-const maxSum = (matrix) => {
-    let sum =[0][0];
-    for(let row=0;row< matrix.length;row++){
-        for(let column =0;column<matrix[row].length;column++){
-            sum+= matrix[row][column]
-        }
-    }
-        return sum
 
-};
 
 // console.log(maxSum(matrixSum))
 
@@ -123,18 +114,7 @@ const maxSum = (matrix) => {
 const matrixTest = [[1,2,7],[3,6,12],[2,4,10]]
 
 
- const max = (matrix) => {
-    let highestNum =[0][0];
-    let column = 0;
-    for(let row=0;row< matrix.length;row++){
-
-        if(highestNum < matrix[row][matrix[row].length-1] ) {
-            highestNum = matrix[row][matrix[row].length-1]
-        }
-        
-    }
-        console.log(highestNum)
-
-};
+ 
 
 // console.log(max(matrixTest));
+
