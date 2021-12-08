@@ -53,8 +53,8 @@ const howSumMemo = (targetSum, numbers, memo ={}) => {
 
 // m = target sum
 // n = numbers.length
-// time complexity = O(n^m * m)
-// space : O(m)
+// time complexity = O(n*m*m) => O(n*m^2)
+// space : O(m^2)
 
 console.log(howSumMemo(7, [2,3])) ; // true
 console.log(howSumMemo(7, [5,3,4,7])) ; // true
