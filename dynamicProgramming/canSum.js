@@ -44,4 +44,4 @@ console.log(canSumMemo(7, [2,3])) ; // true
 console.log(canSumMemo(7, [5,3,4,7])) ; // true
 console.log(canSumMemo(7, [2,4])) ; // false
 console.log(canSumMemo(8, [2,3,5])) ; // true
-console.log(canSumMemo(300, [7,14])) ; // wont load , space complexity is too complex takes time for computer.
+console.log(canSumMemo(300, [7,14])) ; // false
