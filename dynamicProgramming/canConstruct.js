@@ -48,7 +48,7 @@ const canConstructMemo = (target, wordBank, memo= {}) => {
  return false;
 };
 
-// Time Complexity - O(n^n*m)
+// Time Complexity - O(n * m^2)
 // Space Complexity - O(m^2)
 
 console.log(canConstructMemo("abcdef", ["ab","abc","cd","def","abcd"
